@@ -16,5 +16,4 @@ RUN echo 'deb http://ftp.de.debian.org/debian wheezy-backports main' >> /etc/apt
 
 RUN curl -L https://www.npmjs.org/install.sh | sh \
   && npm install -g bower less \
-  && pip install psycopg2 \
-  && pip install gunicorn
+  && pip install psycopg2
