@@ -16,3 +16,6 @@
 [submodule "scrapers/handelsregister"]
 	path = scrapers/handelsregister
 	url = https://github.com/pudo/handelsregister
+[submodule "scrapers/fts"]
+	path = scrapers/fts
+	url = https://github.com/pudo/fts

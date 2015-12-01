@@ -66,3 +66,11 @@ handelsregister:
   build: handelsregister
   links:
     - postgres
+
+fts:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: fts
+  links:
+    - postgres
