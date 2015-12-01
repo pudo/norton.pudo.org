@@ -4,3 +4,15 @@
 [submodule "scrapers/foerderkatalog"]
 	path = scrapers/foerderkatalog
 	url = https://github.com/pudo/foerderkatalog
+[submodule "scrapers/bundeshaushalt"]
+	path = scrapers/bundeshaushalt
+	url = https://github.com/pudo/bundeshaushalt
+[submodule "scrapers/bafin"]
+	path = scrapers/bafin
+	url = https://github.com/pudo/bafin
+[submodule "scrapers/interpol"]
+	path = scrapers/interpol
+	url = https://github.com/pudo/interpol
+[submodule "scrapers/handelsregister"]
+	path = scrapers/handelsregister
+	url = https://github.com/pudo/handelsregister

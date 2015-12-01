@@ -34,3 +34,35 @@ foerderkatalog:
   build: foerderkatalog
   links:
     - postgres
+
+bundeshaushalt:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: bundeshaushalt
+  links:
+    - postgres
+
+bafin:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: bafin
+  links:
+    - postgres
+
+interpol:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: interpol
+  links:
+    - postgres
+
+handelsregister:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: handelsregister
+  links:
+    - postgres
