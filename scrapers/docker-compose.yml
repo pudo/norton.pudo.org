@@ -1,8 +1,7 @@
 scraper:
+  image: pudo/scraper-base
   volumes:
     - "/srv/data/:/srv/data/"
-  links:
-    - postgres
   hostname: scraper
   environment:
     DATABASE_URI: "postgresql://dw:dw@postgres/dw"
@@ -20,6 +19,18 @@ postgres:
 
 ## Begin scrapers
 
-moldova-courts:
-  extends: scraper
+moldovacourts:
+  extends:
+    file: docker-compose.yml
+    service: scraper
   build: moldova-courts
+  links:
+    - postgres
+
+foerderkatalog:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: foerderkatalog
+  links:
+    - postgres
