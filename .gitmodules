@@ -1,0 +1,3 @@
+[submodule "scrapers/moldova-courts"]
+	path = scrapers/moldova-courts
+	url = https://github.com/pudo/moldova-courts

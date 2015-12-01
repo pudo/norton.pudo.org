@@ -1,0 +1,25 @@
+scraper:
+  volumes:
+    - "/srv/data/:/srv/data/"
+  links:
+    - postgres
+  hostname: scraper
+  environment:
+    DATABASE_URI: "postgresql://dw:dw@postgres/dw"
+
+postgres:
+  image: postgres:9.4
+  volumes:
+    - '/srv/op/postgres/:/var/lib/postgresql/data'
+  environment:
+    POSTGRES_USER:     dw
+    POSTGRES_PASSWORD: dw
+    POSTGRES_DATABASE: dw
+  ports:
+    - "127.0.0.1:6432:5432"
+
+## Begin scrapers
+
+moldova-courts:
+  extends: scraper
+  build: moldova-courts
