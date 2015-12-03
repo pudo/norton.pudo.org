@@ -17,6 +17,9 @@ postgres:
   ports:
     - "127.0.0.1:6432:5432"
 
+tor:
+  image: mattes/rotating-proxy:latest
+
 ## Begin scrapers
 
 moldovacourts:
@@ -66,11 +69,23 @@ handelsregister:
   build: handelsregister
   links:
     - postgres
+    - tor
+  environment:
+    HTTP_PROXY: http://tor:5566
+    HTTPS_PROXY: http://tor:5566
 
 fts:
   extends:
     file: docker-compose.yml
     service: scraper
   build: fts
+  links:
+    - postgres
+
+expertgroups:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: expert-groups
   links:
     - postgres

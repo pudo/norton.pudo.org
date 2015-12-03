@@ -19,3 +19,6 @@
 [submodule "scrapers/fts"]
 	path = scrapers/fts
 	url = https://github.com/pudo/fts
+[submodule "scrapers/expert-groups"]
+	path = scrapers/expert-groups
+	url = https://github.com/pudo/expert-groups
