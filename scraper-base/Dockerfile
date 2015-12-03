@@ -12,4 +12,4 @@ RUN apt-get update -qq && apt-get install -y -q --no-install-recommends \
 RUN pip install dataset lxml requests cssselect psycopg2 thready csvkit \
 	unicodecsv networkx unidecode six textract xlrd XlsxWriter \
 	jsonschema elasticsearch awscli
-
+COPY aws.config /etc

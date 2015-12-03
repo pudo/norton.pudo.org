@@ -5,6 +5,11 @@ scraper:
   hostname: scraper
   environment:
     DATABASE_URI: "postgresql://dw:dw@postgres/dw"
+    DATA_PATH: "/srv/data"
+    AWS_DEFAULT_REGION: "eu-west-1"
+    AWS_CONFIG_FILE: "/etc/aws.config"
+  env_file:
+    - local.env
 
 postgres:
   image: postgres:9.4
@@ -87,5 +92,21 @@ expertgroups:
     file: docker-compose.yml
     service: scraper
   build: expert-groups
+  links:
+    - postgres
+
+tr:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: transparency-register
+  links:
+    - postgres
+
+flexicadastre:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: flexicadastre
   links:
     - postgres

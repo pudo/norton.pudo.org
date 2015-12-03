@@ -22,3 +22,9 @@
 [submodule "scrapers/expert-groups"]
 	path = scrapers/expert-groups
 	url = https://github.com/pudo/expert-groups
+[submodule "scrapers/flexicadastre"]
+	path = scrapers/flexicadastre
+	url = https://github.com/pudo/flexicadastre
+[submodule "scrapers/transparency-register"]
+	path = scrapers/transparency-register
+	url = https://github.com/pudo/transparency-register
