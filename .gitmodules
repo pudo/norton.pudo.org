@@ -28,3 +28,6 @@
 [submodule "scrapers/transparency-register"]
 	path = scrapers/transparency-register
 	url = https://github.com/pudo/transparency-register
+[submodule "scrapers/plpr-scraper"]
+	path = scrapers/plpr-scraper
+	url = https://github.com/bundestag/plpr-scraper

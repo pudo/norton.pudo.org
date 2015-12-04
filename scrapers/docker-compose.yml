@@ -79,6 +79,19 @@ handelsregister:
     HTTP_PROXY: http://tor:5566
     HTTPS_PROXY: http://tor:5566
 
+plpr:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: plpr-scraper
+  links:
+    - postgres
+    - tor
+  environment:
+    DATA_PATH: /srv/data/bundestag/plpr
+    HTTP_PROXY: http://tor:5566
+    HTTPS_PROXY: http://tor:5566
+
 fts:
   extends:
     file: docker-compose.yml
