@@ -31,3 +31,12 @@
 [submodule "scrapers/plpr-scraper"]
 	path = scrapers/plpr-scraper
 	url = https://github.com/bundestag/plpr-scraper
+[submodule "scrapers/mdb-scraper"]
+	path = scrapers/mdb-scraper
+	url = https://github.com/bundestag/mdb-scraper
+[submodule "scrapers/opennames"]
+	path = scrapers/opennames
+	url = https://github.com/pudo/opennames
+[submodule "scrapers/ted"]
+	path = scrapers/ted
+	url = https://github.com/pudo/ted

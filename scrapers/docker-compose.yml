@@ -24,8 +24,20 @@ postgres:
 
 tor:
   image: mattes/rotating-proxy:latest
+  environment:
+    tors: 15
 
 ## Begin scrapers
+
+opennames:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: opennames
+  links:
+    - postgres
+  environment:
+    DATA_PATH: "/srv/data/opennames"
 
 moldovacourts:
   extends:
@@ -92,11 +104,31 @@ plpr:
     HTTP_PROXY: http://tor:5566
     HTTPS_PROXY: http://tor:5566
 
+mdb:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: mdb-scraper
+  links:
+    - postgres
+    - tor
+  environment:
+    HTTP_PROXY: http://tor:5566
+    HTTPS_PROXY: http://tor:5566
+
 fts:
   extends:
     file: docker-compose.yml
     service: scraper
   build: fts
+  links:
+    - postgres
+
+ted:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: ted
   links:
     - postgres
 
