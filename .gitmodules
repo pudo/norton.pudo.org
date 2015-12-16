@@ -40,3 +40,6 @@
 [submodule "scrapers/ted"]
 	path = scrapers/ted
 	url = https://github.com/pudo/ted
+[submodule "scrapers/ablaeufe-scraper"]
+	path = scrapers/ablaeufe-scraper
+	url = https://github.com/bundestag/ablaeufe-scraper

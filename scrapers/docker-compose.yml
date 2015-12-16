@@ -25,7 +25,7 @@ postgres:
 tor:
   image: mattes/rotating-proxy:latest
   environment:
-    tors: 15
+    tors: 10
 
 ## Begin scrapers
 
@@ -115,6 +115,14 @@ mdb:
   environment:
     HTTP_PROXY: http://tor:5566
     HTTPS_PROXY: http://tor:5566
+
+ablaeufe:
+  extends:
+    file: docker-compose.yml
+    service: scraper
+  build: ablaeufe-scraper
+  links:
+    - postgres
 
 fts:
   extends:
